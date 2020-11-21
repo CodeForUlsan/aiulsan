@@ -1,0 +1,315 @@
+
+<!-- 기본 폼 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 기본 폼 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height'>
+
+<!-- 페이스북 공유하기 메타 태그 -->
+<meta property='og:url'			content='https://codeforulsan.github.io/aiulsan/'/>
+<meta property='og:type'		content='website'/>
+<meta property='og:title'		content=''/>
+<meta property='og:description'	content=''/>
+<meta property='og:image'		content=''/>
+<!-- 페이스북 공유하기 메타 태그 끝 -->
+
+<!-- CDN JS -->
+<!-- 카카오 API -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<!-- Server JS -->
+<!-- JQuery 3.4.1 -->
+<script src='../../js/jquery-3.4.1.js'></script>
+<!-- Bootstrap 4.4.1 -->
+<script src='../../js/bootstrap/4.4.1/bootstrap.js'></script>
+<!-- Popper 1.6.1 -->
+<script src='../../js/popper/1.6.1/popper.js'></script>
+<!-- 페이스북 공유하기 -->
+<script src='../../js/facebookshare.js'></script>
+<!-- Tubular 1.0 유튜브배경 -->
+<script src='../../js/tubular/jquery.tubular.1.0.js'></script>
+<!-- Tubular Callback -->
+<script src='../../js/tubular.index.js'></script>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<script src='../../js/aos/2.3.1/aos.js'></script>
+
+<!-- Server CSS -->
+<!-- Bootstrap 4.4.1 -->
+<link rel='stylesheet' href='../../css/bootstrap/4.4.1/bootstrap.css'></link>
+<!-- 애니매이션 CSS -->
+<link rel='stylesheet' href='../../css/custom/animation.css'></link>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<link rel='stylesheet' href='../../css/aos/2.3.1/aos.css'></link>
+
+<script>
+$(function(){
+	AOS.init();
+});
+valueSettingFunc("https://youtu.be/sapuA1VnHEE");
+</script>
+
+<style>
+body
+{
+	margin : 0 auto;
+	padding : 0 auto;
+	background-attachment : fixed;
+	background-image : url('../../img/bg.jpg');
+}
+.rowpadding
+{
+	height : 1.7vh;
+}
+li
+{
+	list-style : none;
+}
+</style>
+
+</head>
+<body>
+<!-- 유튜브 백그라운드 영상 시작 -->
+<div class='youtubeVideoPlay'>
+<!-- 유튜브 백그라운드 영상 시작 -->
+<div class='container-fluid'> <!-- 메인 컨테이너 시작 -->
+
+<!-- 기본 폼 끝 --> <!-- 새로운 문서 작성시에 여기까지 복사해서 붙여넣어 주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			계산기 만들기 - 고주용
+		</div>
+	</div>
+	<!-- 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 개발환경 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			구동환경<br>
+			- 파이썬 3.7.9<br>
+			- Numpy 1.9.2<br>
+			- Matplotlib 3.3.1<br>
+			- Urllib3 1.25.11
+		</div>
+	</div>
+	<!-- 개발환경 단락 끝 -->
+	<!-- 사용중인 외부 라이브러리 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			별도 설치가 필요한 외부 라이브러리<br>
+			- Matplotlib<br>
+			- Numpy
+		</div>
+	</div>
+	<!-- 사용중인 외부 라이브러리 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 코드 div 단락 시작 -->
+	<div class='card divCardCustomStyleWhite'>
+		<div class='card-body'>
+			<pre><code>
+
+<!-- 이곳 주석부터 맨 아래 주석 사이에 코드를 붙여넣어주세요 -->
+
+from tkinter import *
+from functools import partial
+import math
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import numpy
+import urllib.request
+
+# 쓰지 않는 함수 eval로 기능 대체
+#def add(x, y):   
+#    result = x + y
+#    return result
+
+# #이 기호를 쓰고 뒤에 글을 쓰면 주석처리가 됩니다.
+# 대부분의 설명을 이 주석으로 합니다.
+
+class Calculator:   # 최상위 부모 클래스
+
+    strPath = "F:\\python\\calcLog.txt"   # calcLog.txt 파일이 저장될 경로를 문자열형으로 미리 저장
+    erMessageFile = "파일 저장에 실패하였습니다"   # 파일 저장에 실패했을때 나타날 메세지
+    # 입력란인 Entry 객체인 entryValue에 수식이 아닌 다른 문자형식이 입력될경우 나타낼 에러 메세지
+    erMessageAC = "수식이 잘못되었습니다 AC 버튼으로 초기화후 다시 입력해주세요"
+
+    def __init__(self, main):   # Calculator 클래스의 생성자. 생성자는 해당 클래스의 객체가 생성될때 무조건 최초 1회 실행 됨
+        # 빈파일을 생성. 사용자가 수식을 입력하여 저장하지 않고 수식불러오기를 할경우에 발생하는 에러를 미리 방지하기 위해서 기술
+        initFile = open(self.strPath, 'w')
+        # 역활을 했으므로 파일객체 닫아줌
+        initFile.close()
+
+        main.title("Simple Calculator") # 최상위 부모 클래스 윈도우창의 제목
+        main.geometry()
+
+        # 그리드 순서대로 컨트롤을 배치했음. 맨 위에 입력란부터 아래로 버튼들이 배치됨
+        # TkInter 그리드 그리기 시작
+        self.entryValue = Entry(main, width=30, justify=RIGHT)
+        self.entryValue.grid(row=0, column=0, columnspan=3)
+        self.entryValue.focus_set()
+
+        Button(main, text="<<", width=10, command=partial(self.getLastLog, self.entryValue)).grid(row=0, column=3, columnspan=1, sticky="w")
+        Button(main, text="7", width=10, command=partial(self.inputValue, self.entryValue, 7)).grid(row=1, column=0, columnspan=1)
+        Button(main, text="8", width=10, command=partial(self.inputValue, self.entryValue, 8)).grid(row=1, column=1, columnspan=1, sticky="w")
+        Button(main, text="9", width=10, command=partial(self.inputValue, self.entryValue, 9)).grid(row=1, column=2, columnspan=1, sticky="w")
+        Button(main, text="+", width=10, command=partial(self.inputValue, self.entryValue, '+')).grid(row=1, column=3, columnspan=1, sticky="w")
+        Button(main, text="4", width=10, command=partial(self.inputValue, self.entryValue, 4)).grid(row=2, column=0, columnspan=1)
+        Button(main, text="5", width=10, command=partial(self.inputValue, self.entryValue, 5)).grid(row=2, column=1, columnspan=1, sticky="w")
+        Button(main, text="6", width=10, command=partial(self.inputValue, self.entryValue, 6)).grid(row=2, column=2, columnspan=1, sticky="w")
+        Button(main, text="-", width=10, command=partial(self.inputValue, self.entryValue, '-')).grid(row=2, column=3, columnspan=1, sticky="w")
+        Button(main, text="3", width=10, command=partial(self.inputValue, self.entryValue, 3)).grid(row=3, column=0, columnspan=1)
+        Button(main, text="2", width=10, command=partial(self.inputValue, self.entryValue, 2)).grid(row=3, column=1, columnspan=1, sticky="w")
+        Button(main, text="1", width=10, command=partial(self.inputValue, self.entryValue, 1)).grid(row=3, column=2, columnspan=1, sticky="w")
+        Button(main, text="X", width=10, command=partial(self.inputValue, self.entryValue, '*')).grid(row=3, column=3, columnspan=1, sticky="w")
+        Button(main, text="AC", width=10, command=partial(self.clearAll, self.entryValue)).grid(row=4, column=0, columnspan=1)
+        Button(main, text="0", width=10, command=partial(self.inputValue, self.entryValue, 0)).grid(row=4, column=1, columnspan=1, sticky="w")
+        Button(main, text=".", width=10, command=partial(self.inputValue, self.entryValue, '.')).grid(row=4, column=2, columnspan=1, sticky="w")
+        Button(main, text="÷", width=10, command=partial(self.inputValue, self.entryValue, '/')).grid(row=4, column=3, columnspan=1, sticky="w")
+        Button(main, text="(", width=10, command=partial(self.inputValue, self.entryValue, '(')).grid(row=5, column=0, columnspan=1)
+        Button(main, text=")", width=10, command=partial(self.inputValue, self.entryValue, ')')).grid(row=5, column=1, columnspan=1, stick="w")
+        Button(main, text="=", width=21, command=partial(self.getResult, self.entryValue)).grid(row=5, column=2, columnspan=2, sticky="w")
+        # TkInter 그리드 그리기 끝
+
+    def inputValue(self, enVal, val):   # 숫자 버튼들을 눌렀을때 해당 숫자를 Entry에 전달하는 역활을 함
+        enVal.insert("end", val)
+    
+    def clearAll(self, enVal):   # AC버튼을 눌렀을때 Entry컨트롤에 입력된 것을 전부 삭제함
+        enVal.delete(0, "end")
+    
+    def getResult(self, enVal):   # = 버튼을 눌렀을때 작동
+        send_request = "http://api.mathjs.org/v4/?expr="
+        try:
+            expFile = open(self.strPath, 'w')               # 파일열기
+        except:
+            print(self.erMessageFile)
+            exit()
+        expFile.write(enVal.get())
+        expFile.close()                                     # 파일닫기
+        rep_str_value = enVal.get().replace("+", "%2B")
+        rep_str_value = rep_str_value.replace("/", "%2F")
+        send_request = send_request + rep_str_value
+        request_data = urllib.request.urlopen(send_request)
+        reNum = request_data.read().decode("utf-8")
+        # reNum = eval(enVal.get())
+        enVal.delete(0, "end")
+        enVal.insert("end", reNum)
+
+    def getLastLog(self, enVal):   # << 버튼을 눌렀을때 마지막으로 사용한 수식을 txt파일에 저장하는 버튼
+        try:
+            expFile = open(self.strPath, 'r')               # 파일열기
+        except:
+            print("파일 읽기에 실패하였습니다")
+            exit()
+        expStr = expFile.read()
+        enVal.delete(0, "end")
+        enVal.insert("end", expStr)
+        expFile.close()                                     # 파일닫기
+
+class ScienceCalculator(Calculator):
+
+    strPath = "sciCalcLog.txt"
+
+    def __init__(self, main):
+        super().__init__(main)
+        main.title("Science Calculator")
+        InitFile = open(self.strPath, 'w')
+        InitFile.close()
+
+        Button(main, text="√", width=10, command=partial(self.getSquResult, self.entryValue)).grid(row=5, column=0, columnspan=1)
+        Button(main, text="x²", width=10, command=partial(self.getRootResult, self.entryValue)).grid(row=5, column=1, columnspan=1, stick="w")
+
+    def getRootResult(self, enVal):
+        try:
+            changeNum = eval(enVal.get())
+        except NameError or SyntaxError:
+            enVal.delete(0, "end")
+            enVal.insert(0, self.erMessageAC)
+        else:
+            try:
+                expFile = open(self.strPath, 'w')
+            except FileNotFoundError:
+                print(self.erMessageFile)
+                exit()
+            else:
+                expFile.write(enVal.get())
+                expFile.close()
+                reNum = math.pow(changeNum, 2)
+                enVal.delete(0, "end")
+                enVal.insert("end", reNum)
+
+    def getSquResult(self, enVal):
+        try:
+            changeNum = eval(enVal.get())
+        except NameError or SyntaxError:
+            enVal.delete(0, "end")
+            enVal.insert(0, self.erMessageAC)
+        else:
+            expFile = open(self.strPath, 'w')
+            expFile.write(enVal.get())
+            expFile.close()
+            reNum = math.sqrt(changeNum)
+            enVal.delete(0, "end")
+            enVal.insert("end", reNum)
+
+class GraphCaluculator(ScienceCalculator):
+    x = []
+    y = []
+    fig = Figure(figsize = (3, 3), dpi = 100)
+    ax = fig.add_subplot(111)
+    canvas = None
+
+    def getRootResult(self, enVal):
+        super().getRootResult(enVal)
+        for loop in numpy.linspace(0, 100, 100):
+            self.x.append(loop)
+            self.y.append(math.sqrt(loop))
+        self.ax.plot(self.x, self.y)
+        self.canvas = FigureCanvasTkAgg(self.fig, main)
+        self.canvas.get_tk_widget().grid(row=6, column=0, columnspan=2)
+    
+    def getSquResult(self, enVal):
+        super().getSquResult(enVal)
+        for loop in numpy.linspace(0, 100, 100):
+            self.x.append(loop)
+            self.y.append(math.pow(loop, 2))
+        self.ax.plot(self.x, self.y)
+        self.canvas = FigureCanvasTkAgg(self.fig, main)
+        self.canvas.get_tk_widget().grid(row=6, column=1, columnspan=2, sticky='w')
+
+
+main = Tk()
+#calcObject = Calculator(main)
+#calcObject = ScienceCalculator(main)
+calcObject = GraphCaluculator(main)
+main.mainloop()
+
+<!-- 위에 주석부터 이 주석의 사이에 코드를 붙어넣어주세요 -->
+
+			</code></pre>
+		</div>
+	</div>
+	<!-- 코드 div 단락 끝 -->
+
+<!-- 푸터 부분 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+</div>
+<!-- 유튜브 백그라운드 영상 끝 -->
+</div><!-- youtubeVideoPlay -->
+<!-- 유튜브 백그라운드 영상 끝 -->
+<script>
+// 카카오링크
+function kakaoLinkSend(){
+	Kakao.Link.sendScrap({
+		requestUrl: 'https://codeforulsan.github.io/aiulsan/'
+	});
+}
+</script>
+</body>
+</html>
+
+<!-- 푸터 부분 끝 --> <!-- 새로운 문서를 작성할때 푸터 부분 시작 부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->

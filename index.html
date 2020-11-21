@@ -1,0 +1,351 @@
+
+<!-- 기본 폼 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 기본 폼 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height'>
+
+<!-- 페이스북 공유하기 메타 태그 -->
+<meta property='og:url'			content='https://codeforulsan.github.io/aiulsan/'/>
+<meta property='og:type'		content='website'/>
+<meta property='og:title'		content=''/>
+<meta property='og:description'	content=''/>
+<meta property='og:image'		content=''/>
+<!-- 페이스북 공유하기 메타 태그 끝 -->
+
+<!-- CDN JS -->
+<!-- 카카오 API -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<!-- jquery.mb.YTPlayer js -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.5/jquery.mb.YTPlayer.min.js'></script>
+
+<!-- Server JS -->
+<!-- JQuery 3.4.1 -->
+<script src='./js/jquery-3.4.1.js'></script>
+<!-- Bootstrap 4.4.1 -->
+<script src='./js/bootstrap/4.4.1/bootstrap.js'></script>
+<!-- Popper 1.6.1 -->
+<script src='./js/popper/1.6.1/popper.js'></script>
+<!-- 페이스북 공유하기 -->
+<script src='./js/facebookshare.js'></script>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<script src='./js/aos/2.3.1/aos.js'></script>
+
+<!-- Server CSS -->
+<!-- Bootstrap 4.4.1 -->
+<link rel='stylesheet' href='./css/bootstrap/4.4.1/bootstrap.css'></link>
+<!-- 애니매이션 CSS -->
+<link rel='stylesheet' href='./css/custom/animation.css'></link>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<link rel='stylesheet' href='./css/aos/2.3.1/aos.css'></link>
+
+<!-- CDN CSS -->
+<!-- jquery.mb.YTPlayer js -->
+<link rel='https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.5/css/jquery.mb.YTPlayer.min.css'></link>
+
+<script>
+$(function(){
+	AOS.init();
+});
+jQuery(function(){
+	JQuery( '#youtubeVideoPlay' ).YTPlayer();
+});
+</script>
+
+<style>
+body
+{
+	margin : 0 auto;
+	padding : 0 auto;
+	background-attachment : fixed;
+	background-image : url('img/bg.jpg');
+}
+.rowpadding
+{
+	height : 1.7vh;
+}
+li
+{
+	list-style : none;
+}
+</style>
+
+</head>
+<body>
+<!-- 유튜브 백그라운드 영상 시작 -->
+<div id='youtubeVideoPlay' class='player' data-property="{
+	videoUrl: 'https://youtu.be/sapuA1VnHEE',
+	mute: true,
+	showControls: false,
+	useOnMobile: true,
+	quality: 'highres',
+	containment: 'body',
+	loop: true,
+	autoPlay: true,
+	stopMovieOnBlur: false,
+	startAt: 0,
+	opacity: 1
+	}">
+<!-- 유튜브 백그라운드 영상 시작 -->
+<div class='container-fluid'> <!-- 메인 컨테이너 시작 -->
+
+<!-- 기본 폼 끝 --> <!-- 새로운 문서 작성시에 여기까지 복사해서 붙여넣어 주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			울산 인공지능 1116 웹페이지
+		</div>
+	</div>
+	<!-- 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 공지사항 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			공지사항
+		</div>
+		<div class='card-body'>
+			정보 공유에 참여하고 싶으시거나 기여하고 싶으신분은 '고주용'에게 말해주세요.<br>
+			github 경험 없으셔도 괜찮습니다. 사용법 알려드립니다.<br>
+			html 경험 없으셔도 마찬가지로 괜찮습니다. 알려드립니다.<br>
+			물론 github, html 유경험자분도 열렬히 환영합니다.<br>
+			<br>
+			이곳은 저희 인공지능반의 수업에 관련된 유용한 정보를 모아서 공유하기 위해 만들어졌습니다.<br>
+			정보공유에 참여, 기여하시고 싶으신분은 언제든 환영합니다.
+		</div>
+	</div>
+	<!-- 공지사항 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 내부 문서 링크들 모음 시작 --> <!-- @@@ 새롭게 생성된 내부문서는 이 안에 작성해주세요 @@@ -->
+	<!-- 수업중인 코드 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			현재 수업에 사용중인 코드
+		</div>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='./teachercodes/calccode.html' type='button'>
+				계산기 만들기 11월 20일 12:30(완료)
+			</a>
+		</div>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='./teachercodes/vmcode.html' type='button'>
+				자판기 만들기 11월 20일 17:30(진행중)
+			</a>
+		</div>
+	</div>
+	<!-- 수업중인 코드 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 학생들 작성코드 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			학생들 작성코드
+		</div>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='./studentcodes/pjw/coffeevmcode.html' type='button'>
+				자판기 만들기 - 박제원
+			</a>
+		</div>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='./studentcodes/kjy/openapicalccode.html' type='button'>
+				계산기 만들기 - 고주용
+			</a>
+		</div>
+	</div>
+	<!-- 학생들 작성코드 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='./howusegithub.html' type='button'>
+				깃헙 간단한 사용방법
+			</a>
+		</div>
+	</div>
+	<!-- 단락 끝 -->
+	<!-- 내부 문서 링크들 모음 끝 --> <!-- @@@ 새롭게 생성된 내부문서는 이 안에 작성해주세요 @@@ -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 그누보드 게시판 링크 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='http://ulin.kr/bbs/board.php?bo_table=ai1116' type='button'>
+				그누보드 울산 인공지능 1116 게시판
+			</a>
+		</div>
+		<div class='card-body'>
+			회원 가입 안하고도 글을 쓸수 있습니다! 회원가입 없이 글 작성해주세요!
+		</div>
+	</div>	
+	<!-- 그누보드 게시판 링크 단락 끝 -->
+	<!-- 내부 문서 링크들 모음 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-right'>
+		<div class='card-body'>
+			참고 페이지 링크 리스트
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 1번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://www.python.org/' type='button'>
+				파이썬 공식홈페이지
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 1번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 2번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-right'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://www.anaconda.com/' type='button'>
+				파이썬 배포판 패키지인 아나콘다 공식홈페이지
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 2번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 3번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://docs.python.org/3/' type='button'>
+				파이썬3 공식 문서
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 3번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 4번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-right'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='http://www.flowdas.com/pages/python-docs-ko.html' type='button'>
+				파이썬 한국어 번역 프로젝트
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 4번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 5번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://python.flowdas.com/' type='button'>
+				파이썬3 한국어 번역 문서
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 5번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 6번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-right'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://www.creapple.com/home/main' type='button'>
+				크리애플 홈페이지(강사님이 운영중인 강의사이트)
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 6번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 7번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://www.youtube.com/channel/UCNJ0idYZbJKUuhEvUbcYGkg' type='button'>
+				크리애플 유튜브채널
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 7번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 8번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-right'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://www.pythonpad.co/courses/intro-1/' type='button'>
+				카이스트 파이썬 기초 공개강의
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 8번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 9번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://codecombat.com/' type='button'>
+				파이썬을 배울수있는 게임 코드컴뱃
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 9번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 10번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-right'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://namu.wiki/w/Python' type='button'>
+				나무위키 파이썬항목 문서
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 10번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 11번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://matplotlib.org/' type='button'>
+				Matplotlib 라이브러리 공식홈페이지
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 11번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 12번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-right'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://numpy.org/' type='button'>
+				Numpy 라이브러리 공식홈페이지
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 12번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 13번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle' data-aos='slide-up'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://api.mathjs.org/' type='button'>
+				Math.js API문서 페이지(Open API 학습용)
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 13번 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 참고 페이지 링크 리스트 14번 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			<a class='btn btn-outline-primary rotateStyle' href='https://python.flowdas.com/howto/urllib2.html' type='button'>
+				urllib 패키지를 사용하여 인터넷 리소스를 가져오는 방법(from 파이썬3 한국어 번역 문서)
+			</a>
+		</div>
+	</div>
+	<!-- 참고 페이지 링크 리스트 14번 제목 단락 끝 -->
+
+<!-- 푸터 부분 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+</div>
+<!-- 유튜브 백그라운드 영상 끝 -->
+</div><!-- youtubeVideoPlay -->
+<!-- 유튜브 백그라운드 영상 끝 -->
+<script>
+// 카카오링크
+function kakaoLinkSend(){
+	Kakao.Link.sendScrap({
+		requestUrl: 'https://codeforulsan.github.io/aiulsan/'
+	});
+}
+</script>
+</body>
+</html>
+
+<!-- 푸터 부분 끝 --> <!-- 새로운 문서를 작성할때 푸터 부분 시작 부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->

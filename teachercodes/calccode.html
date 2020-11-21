@@ -1,0 +1,282 @@
+
+<!-- 기본 폼 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 기본 폼 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height'>
+
+<!-- 페이스북 공유하기 메타 태그 -->
+<meta property='og:url'			content='https://codeforulsan.github.io/aiulsan/'/>
+<meta property='og:type'		content='website'/>
+<meta property='og:title'		content=''/>
+<meta property='og:description'	content=''/>
+<meta property='og:image'		content=''/>
+<!-- 페이스북 공유하기 메타 태그 끝 -->
+
+<!-- CDN JS -->
+<!-- 카카오 API -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<!-- Server JS -->
+<!-- JQuery 3.4.1 -->
+<script src='../js/jquery-3.4.1.js'></script>
+<!-- Bootstrap 4.4.1 -->
+<script src='../js/bootstrap/4.4.1/bootstrap.js'></script>
+<!-- Popper 1.6.1 -->
+<script src='../js/popper/1.6.1/popper.js'></script>
+<!-- 페이스북 공유하기 -->
+<script src='../js/facebookshare.js'></script>
+<!-- Tubular 1.0 유튜브배경 -->
+<script src='../js/tubular/jquery.tubular.1.0.js'></script>
+<!-- Tubular Callback -->
+<script src='../js/tubular.index.js'></script>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<script src='../js/aos/2.3.1/aos.js'></script>
+
+<!-- Server CSS -->
+<!-- Bootstrap 4.4.1 -->
+<link rel='stylesheet' href='../css/bootstrap/4.4.1/bootstrap.css'></link>
+<!-- 애니매이션 CSS -->
+<link rel='stylesheet' href='../css/custom/animation.css'></link>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<link rel='stylesheet' href='../css/aos/2.3.1/aos.css'></link>
+
+<script>
+$(function(){
+	AOS.init();
+});
+valueSettingFunc("https://youtu.be/sapuA1VnHEE");
+</script>
+
+<style>
+body
+{
+	margin : 0 auto;
+	padding : 0 auto;
+	background-attachment : fixed;
+	background-image : url('../img/bg.jpg');
+}
+.rowpadding
+{
+	height : 1.7vh;
+}
+li
+{
+	list-style : none;
+}
+</style>
+
+</head>
+<body>
+<!-- 유튜브 백그라운드 영상 시작 -->
+<div class='youtubeVideoPlay'>
+<!-- 유튜브 백그라운드 영상 시작 -->
+<div class='container-fluid'> <!-- 메인 컨테이너 시작 -->
+
+<!-- 기본 폼 끝 --> <!-- 새로운 문서 작성시에 여기까지 복사해서 붙여넣어 주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			현재 수업에 사용중인 코드 11월 20일 12:30 수업완료
+		</div>
+	</div>
+	<!-- 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 개발환경 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			구동환경<br>
+			- 파이썬 3.7.9<br>
+			- Numpy 1.9.2<br>
+			- Matplotlib 3.3.1<br>
+			- Urllib3 1.25.11
+		</div>
+	</div>
+	<!-- 개발환경 단락 끝 -->
+	<!-- 사용중인 외부 라이브러리 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			별도 설치가 필요한 외부 라이브러리<br>
+			- Matplotlib<br>
+			- Numpy
+		</div>
+	</div>
+	<!-- 사용중인 외부 라이브러리 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 코드 div 단락 시작 -->
+	<div class='card divCardCustomStyleWhite'>
+		<div class='card-body'>
+			파일명 : 10openAPICalc.py
+		</div>
+		<div class='card-body'>
+			<pre><code>
+
+<!-- 이곳 주석부터 맨 아래 주석 사이에 코드를 붙여넣어주세요 -->
+
+from tkinter import *
+import math
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import numpy as np
+import urllib.request
+
+class Calculator:
+    def input_value(self, val):
+        self.entry_value.insert("end", val)
+
+    def clear_all(self):
+        self.entry_value.delete(0, "end")
+
+    def get_result(self):
+        try:
+            # return_value = eval(self.entry_value.get())
+            # https://api.mathjs.org/
+            # replace '+' to '%2B'
+            api_url = "http://api.mathjs.org/v4/?expr="
+            expr = self.entry_value.get().replace("+", "%2B")
+            expr = expr.replace("/", "%2F")
+            url = api_url+expr
+            print(url) 
+            url_data = urllib.request.urlopen(url)
+            return_value = url_data.read().decode('utf-8')
+            # write entry value to file
+            f = open("calc_log.txt", "w")
+            f.write(self.entry_value.get())
+            f.close()
+        except SyntaxError or NameError:
+            self.entry_value.delete(0, "end")
+            self.entry_value.insert(0, 'Input Error, Press AC button')
+        else:
+            self.entry_value.delete(0, "end")
+            self.entry_value.insert(0, return_value)
+            
+    def get_last_log(self):
+        # read entry value from file
+        f = open("calc_log.txt", "r")
+        read_value = f.read()
+        self.entry_value.delete(0, "end")
+        self.entry_value.insert(0, read_value)
+        f.close()
+
+    def __init__(self, main):
+        main.title("Simple Calculator")
+        main.geometry()
+
+        self.entry_value = Entry(main, width=40, justify=RIGHT)
+        self.entry_value.grid(row=0,column=0,columnspan=3)
+        self.entry_value.focus_set() 
+                        
+        Button(main,text="=",width=20,command=lambda:self.get_result()).grid(row=5, column=2,columnspan=2)
+        Button(main,text='AC',width=10,command=lambda:self.clear_all()).grid(row=4, column=0)
+        Button(main,text="<",width=10,command=lambda:self.get_last_log()).grid(row=0, column=3)
+        Button(main,text="+",width=10,command=lambda:self.input_value('+')).grid(row=1, column=3)
+        Button(main,text="-",width=10,command=lambda:self.input_value('-')).grid(row=2, column=3)
+        Button(main,text="x",width=10,command=lambda:self.input_value('*')).grid(row=3, column=3)
+        Button(main,text="÷",width=10,command=lambda:self.input_value('/')).grid(row=4, column=3)
+        Button(main,text=".",width=10,command=lambda:self.input_value('.')).grid(row=4, column=2)
+        Button(main,text="(",width=10,command=lambda:self.input_value('(')).grid(row=5, column=0)
+        Button(main,text=")",width=10,command=lambda:self.input_value(')')).grid(row=5, column=1)
+        Button(main,text="7",width=10,command=lambda:self.input_value(7)).grid(row=1, column=0)
+        Button(main,text="8",width=10,command=lambda:self.input_value(8)).grid(row=1, column=1)
+        Button(main,text="9",width=10,command=lambda:self.input_value(9)).grid(row=1, column=2)
+        Button(main,text="4",width=10,command=lambda:self.input_value(4)).grid(row=2, column=0)
+        Button(main,text="5",width=10,command=lambda:self.input_value(5)).grid(row=2, column=1)
+        Button(main,text="6",width=10,command=lambda:self.input_value(6)).grid(row=2, column=2)
+        Button(main,text="1",width=10,command=lambda:self.input_value(1)).grid(row=3, column=0)
+        Button(main,text="2",width=10,command=lambda:self.input_value(2)).grid(row=3, column=1)
+        Button(main,text="3",width=10,command=lambda:self.input_value(3)).grid(row=3, column=2)
+        Button(main,text="0",width=10,command=lambda:self.input_value(0)).grid(row=4, column=1)
+
+        # create initial blank file
+        f = open("calc_log.txt", "w")
+        f.close()
+
+class ScienceCalculator(Calculator):
+    def get_sqrt(self):
+        try:
+            return_value = eval(self.entry_value.get())
+        except SyntaxError or NameError:
+            self.entry_value.delete(0, "end")
+            self.entry_value.insert(0, 'Input Error, Press AC button')
+        else:
+            calc_value = math.sqrt(return_value)
+            self.entry_value.delete(0, "end")
+            self.entry_value.insert(0, calc_value)
+            
+    def get_pow(self):
+        try:
+            return_value = eval(self.entry_value.get())
+        except SyntaxError or NameError:
+            self.entry_value.delete(0, "end")
+            self.entry_value.insert(0, 'Input Error, Press AC button')
+        else:
+            calc_value = math.pow(return_value, 2)
+            self.entry_value.delete(0, "end")
+            self.entry_value.insert(0, calc_value)
+
+    def __init__(self, main):
+        super().__init__(main)
+        main.title("Science Calculator")
+        Button(main,text="√",width=10,command=lambda:self.get_sqrt()).grid(row=5, column=0)
+        Button(main,text="x²",width=10,command=lambda:self.get_pow()).grid(row=5, column=1)
+
+class GraphCalculator(ScienceCalculator):
+    x = []
+    y = []
+    fig = Figure(figsize=(3,3), dpi=100)
+    ax = fig.add_subplot(111)
+    canvas = None
+    
+    def get_sqrt(self):
+        super().get_sqrt()
+        for t in np.linspace(0, 100, 100):
+            self.x.append(t)
+            self.y.append(math.sqrt(t))
+        self.ax.plot(self.x,self.y)
+        self.canvas = FigureCanvasTkAgg(self.fig, main)
+        self.canvas.get_tk_widget().grid(row=6,column=0,columnspan=4)
+        
+    def get_pow(self):
+        super().get_pow()
+        for t in np.linspace(0, 100, 100):
+            self.x.append(t)
+            self.y.append(math.pow(t, 2))
+        self.ax.plot(self.x,self.y)
+        self.canvas = FigureCanvasTkAgg(self.fig, main)
+        self.canvas.get_tk_widget().grid(row=6,column=0,columnspan=4)
+      
+#main
+main = Tk()
+calc = GraphCalculator(main)
+main.mainloop()
+
+<!-- 위에 주석부터 이 주석의 사이에 코드를 붙어넣어주세요 -->
+
+			</code></pre>
+		</div>
+	</div>
+	<!-- 코드 div 단락 끝 -->
+
+<!-- 푸터 부분 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+</div>
+<!-- 유튜브 백그라운드 영상 끝 -->
+</div><!-- youtubeVideoPlay -->
+<!-- 유튜브 백그라운드 영상 끝 -->
+<script>
+// 카카오링크
+function kakaoLinkSend(){
+	Kakao.Link.sendScrap({
+		requestUrl: 'https://codeforulsan.github.io/aiulsan/'
+	});
+}
+</script>
+</body>
+</html>
+
+<!-- 푸터 부분 끝 --> <!-- 새로운 문서를 작성할때 푸터 부분 시작 부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->

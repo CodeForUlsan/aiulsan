@@ -1,0 +1,64 @@
+/* 부트스트랩(bootstrap) 연동형 CSS */
+/* 앞에 div가 붙은 스타일은 div와 함께쓸것 */
+/* 일반 로테이트 스타일과 이미지로테이트 스타일은 테두리의 표시 및 색상변환 애니매이션의 유무 차이 */
+
+.divCardCustomStyle
+{
+	color : #FFFFFF;
+	background-color : rgba(0, 0, 0, 0.5);
+	-webkit-transition : background-color 1s;
+    transition : background-color 1s;
+}
+.divCardCustomStyle:hover,
+.divCardCustomStyle:active,
+.divCardCustomStyle:focus
+{
+	background-color : rgba(0, 0, 0, 1.0);
+	-webkit-transform : background-color 1s;
+    transform : background-color 1s;
+}
+.divCardCustomStyleWhite
+{
+	opacity : 0.7;
+	-webkit-transition : background-color 1s, opacity 1s;
+    transition : background-color 1s, opacity 1s;
+}
+.divCardCustomStyleWhite:hover,
+.divCardCustomStyleWhite:active,
+.divCardCustomStyleWhite:focus
+{
+	opacity : 1.0;
+	-webkit-transform : background-color 1s, opacity 1s;
+    transform : background-color 1s, opacity 1s;
+}
+.rotateStyle
+{
+	cursor : pointer;
+	border : 3px solid #FFFFFF;
+	-webkit-transition : background-color 1s, -webkit-transform 1s, border 1s;
+    transition : background-color 1s, transform 1s, border 1s;
+}
+.rotateStyle:hover,
+.rotateStyle:active,
+.rotateStyle:focus
+{
+	cursor : pointer;
+	background-color : #2196F3;
+	border : 3px solid #2196F3;
+	-webkit-transform : rotateY(360deg);
+    transform : rotateY(360deg);
+}
+.imageRotateStyle
+{
+	cursor : pointer;
+	-webkit-transition : -webkit-transform 1s;
+	transition : transform 1s;
+}
+.imageRotateStyle:hover,
+.imageRotateStyle:active,
+.imageRotateStyle:focus
+{
+	cursor : pointer;
+	-webkit-transform : rotateY(360deg);
+	transform : rotateY(360deg);
+}
