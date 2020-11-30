@@ -1,0 +1,158 @@
+
+<!-- 기본 폼 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 기본 폼 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height'>
+
+<!-- 페이스북 공유하기 메타 태그 -->
+<meta property='og:url'			content='https://codeforulsan.github.io/aiulsan/'/>
+<meta property='og:type'		content='website'/>
+<meta property='og:title'		content=''/>
+<meta property='og:description'	content=''/>
+<meta property='og:image'		content=''/>
+<!-- 페이스북 공유하기 메타 태그 끝 -->
+
+<!-- CDN JS -->
+<!-- 카카오 API -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<!-- Server JS -->
+<!-- JQuery 3.4.1 -->
+<script src='./js/jquery-3.4.1.js'></script>
+<!-- Bootstrap 4.4.1 -->
+<script src='./js/bootstrap/4.4.1/bootstrap.js'></script>
+<!-- Popper 1.6.1 -->
+<script src='./js/popper/1.6.1/popper.js'></script>
+<!-- 페이스북 공유하기 -->
+<script src='./js/facebookshare.js'></script>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<script src='./js/aos/2.3.1/aos.js'></script>
+
+<!-- Server CSS -->
+<!-- Bootstrap 4.4.1 -->
+<link rel='stylesheet' href='./css/bootstrap/4.4.1/bootstrap.css'></link>
+<!-- 애니매이션 CSS -->
+<link rel='stylesheet' href='./css/custom/animation.css'></link>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<link rel='stylesheet' href='./css/aos/2.3.1/aos.css'></link>
+
+<script>
+$(function(){
+	AOS.init();
+});
+</script>
+
+<style>
+body
+{
+	margin : 0 auto;
+	padding : 0 auto;
+	background-attachment : fixed;
+}
+.rowpadding
+{
+	height : 1.7vh;
+}
+li
+{
+	list-style : none;
+}
+.movieBackground
+{
+	position : fixed;
+	right : 0;
+	bottom : 0;
+	min-width : 100%;
+	min-height : 100%;
+	width : auto;
+	height : auto;
+	z-index : -1;
+	background-size : cover;	
+}
+</style>
+
+</head>
+<body>
+<!-- 백그라운드 영상 시작 -->
+<div>
+	<video class='movieBackground' autoplay loop muted poster='img/bg.jpg'>
+		<source src='img/mbg.mp4' type='video/mp4'>
+	</video>
+<!-- 백그라운드 영상 시작 -->
+<div class='container-fluid'> <!-- 메인 컨테이너 시작 -->
+
+<!-- 기본 폼 끝 --> <!-- 새로운 문서 작성시에 여기까지 복사해서 붙여넣어 주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			개발 환경 설정에 관한 Q&A
+		</div>
+	</div>
+	<!-- 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			Q. 아나콘다를 사용중인데 설치한지 오래된것 같아 최신버젼을 재설치 할려고 합니다. 혹시 재설치 안하고 업데이트 하거나 하는 방법은 없나요?
+		</div>
+		<div class='card-body'>
+			A. 업데이트가 가능합니다. 밑에 링크를 참고하세요.<br><br>
+			<a class='btn btn-outline-primary rotateStyle' href='https://kuduz.tistory.com/1171' type='button'>
+				파이썬 아나콘다 최신 버전 업데이트하기
+			</a>			
+		</div>
+	</div>
+	<!-- 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			Q. 텐서플로우를 사용하기위해 pip로 설치를 진행하려 했더니 버젼을 찾을수 없다면서 설치가 안됩니다.<br><br>
+			<img class='img-fluid' src='./qnasc/condaqna1.png'>
+		</div>
+		<div class='card-body'>
+			A. 설치된 파이썬(혹은 아나콘다)가 몇bit 환경으로 설치된건지 확인해주세요.<br>
+			참고로 <font color='red'><b>텐서플로우는 32bit 환경을 지원하지 않습니다. 텐서플로우를 사용하기 위해서는 기존 파이썬을 삭제하고 64bit 환경으로 다시 설치하셔야 합니다.</b></font><br><br>
+			<img class='img-fluid' src='./qnasc/condaqna2.png'>					
+		</div>
+	</div>
+	<!-- 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			Q. 윈도우에서 아나콘다를 제거하고 다시 설치하려고하는데 프로그램 추가 삭제에서 항목이 보이지 않습니다. 어떻게 제거해야 하나요?<br><br>
+		</div>
+		<div class='card-body'>
+			A. 아나콘다가 설치된 폴더내에 언인스톨러(uninstaller)가 들어가 있습니다.<br>
+			설치된 폴더로 이동하여 이 언인스톨러를 실행해서 삭제해주시고, PC를 리부팅을 하신다음에 설치하시려는 아나콘다를 설치해주시면 됩니다.<br><br>
+			<img class='img-fluid' src='./qnasc/condadel1.png'>
+		</div>
+	</div>
+	<!-- 제목 단락 끝 -->
+	
+<!-- 푸터 부분 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+</div>
+<!-- 백그라운드 영상 끝 -->
+</div><!-- VideoPlayDiv -->
+<!-- 백그라운드 영상 끝 -->
+<script>
+// 카카오링크
+function kakaoLinkSend(){
+	Kakao.Link.sendScrap({
+		requestUrl: 'https://codeforulsan.github.io/aiulsan/'
+	});
+}
+</script>
+</body>
+</html>
+
+<!-- 푸터 부분 끝 --> <!-- 새로운 문서를 작성할때 푸터 부분 시작 부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->

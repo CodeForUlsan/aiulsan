@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: '열정 넘치는 좋은 분들과 함께 하게 되어  너무나 벅차고 기쁩니다'' first issue'
+        pr-message: '서로 정보 공유 하며 함께 멀리 가면 좋겠습니다'' first pr'
