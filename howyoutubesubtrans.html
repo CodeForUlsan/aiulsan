@@ -1,0 +1,203 @@
+
+<!-- 기본 폼 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 기본 폼 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height'>
+
+<!-- 페이스북 공유하기 메타 태그 -->
+<meta property='og:url'			content='https://codeforulsan.github.io/aiulsan/'/>
+<meta property='og:type'		content='website'/>
+<meta property='og:title'		content=''/>
+<meta property='og:description'	content=''/>
+<meta property='og:image'		content=''/>
+<!-- 페이스북 공유하기 메타 태그 끝 -->
+
+<!-- CDN JS -->
+<!-- 카카오 API -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<!-- Server JS -->
+<!-- JQuery 3.4.1 -->
+<script src='./js/jquery-3.4.1.js'></script>
+<!-- Bootstrap 4.4.1 -->
+<script src='./js/bootstrap/4.4.1/bootstrap.js'></script>
+<!-- Popper 1.6.1 -->
+<script src='./js/popper/1.6.1/popper.js'></script>
+<!-- 페이스북 공유하기 -->
+<script src='./js/facebookshare.js'></script>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<script src='./js/aos/2.3.1/aos.js'></script>
+
+<!-- Server CSS -->
+<!-- Bootstrap 4.4.1 -->
+<link rel='stylesheet' href='./css/bootstrap/4.4.1/bootstrap.css'></link>
+<!-- 애니매이션 CSS -->
+<link rel='stylesheet' href='./css/custom/animation.css'></link>
+<!-- AOS 페럴렉스 애니매이션 js -->
+<link rel='stylesheet' href='./css/aos/2.3.1/aos.css'></link>
+
+<script>
+$(function(){
+	AOS.init();
+});
+</script>
+
+<style>
+body
+{
+	margin : 0 auto;
+	padding : 0 auto;
+	background-attachment : fixed;
+}
+.rowpadding
+{
+	height : 1.7vh;
+}
+li
+{
+	list-style : none;
+}
+.movieBackground
+{
+	position : fixed;
+	right : 0;
+	bottom : 0;
+	min-width : 100%;
+	min-height : 100%;
+	width : auto;
+	height : auto;
+	z-index : -1;
+	background-size : cover;	
+}
+</style>
+
+</head>
+<body>
+<!-- 백그라운드 영상 시작 -->
+<div>
+	<video class='movieBackground' autoplay loop muted poster='img/bg.jpg'>
+		<source src='img/mbg.mp4' type='video/mp4'>
+	</video>
+<!-- 백그라운드 영상 시작 -->
+<div class='container-fluid'> <!-- 메인 컨테이너 시작 -->
+
+<!-- 기본 폼 끝 --> <!-- 새로운 문서 작성시에 여기까지 복사해서 붙여넣어 주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 제목 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			유튜브 영상 자동번역 기능을 활용해 한글자막으로 보는 방법
+		</div>
+	</div>
+	<!-- 제목 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			번역기가 아직 못미더우시다고 말씀하시는 분들도 많이 계실겁니다.<br>
+			그런데 이게 정말 꽤 쓸만하게 많이 발전했습니다.<br>
+			그래서 저처럼 영어는 약하신데 영어로 되어있는 강의를 참고하고자 하시는분들에게 추천드리는 방법입니다.<br>
+			이 글을 보시는 시점에는 이게 더욱더 발전해서 훨씬더 자연스러운 양질의 번역을 제공하고 있으리라 믿습니다.<br>
+			물론 이글을 쓰는 시점에만해도 이해하는데는 무리가 없을정도로 꽤 준수한 번역을 자랑합니다.
+		</div>
+	</div>
+	<!-- 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			일단 보고자 하는 영상을 틉니다.<br><br>
+			저는 NLP zero to hero 라는 영상을 보도록 하겠습니다<br><br>
+			벌써부터 멀미가 밀려오지만 꾹 참고 아래의 과정을 따라해주세요.<br><br>
+			그렇게 하시고나면 그나마 멀미가 가실것입니다.<br><br>
+			<img class='img-fluid' src='./howyoutube/pic1.png'>
+		</div>
+	</div>
+	<!-- 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			우선 한글자막으로 바꿔주기전에 자막 설정이 켜져있는지부터 확인해주세요.<br><br>
+			참고로 자막 온/오프 기능이 없는데 영상에 자막이 출력된다? 그렇다면 십중팔구 자막이 씌워진 영상을 채널관리자가 올린거라서 이것은 방법이 없습니다.<br><br>
+			살포시 돌아가기 눌러주시고 영상제작자에게 한글자막을 요청하도록 합시다. 물론 한글자막을 친히 입혀서 영상을 다시 올려줄지는 별개의 문제지만요.<br><br>
+			그리고 자막 온/오프가 가능하다면 버튼밑에 붉은색의 줄이 그어져있는지 확인하시고 반드시 자막을 켜주세요.<br><br>
+			<img class='img-fluid' src='./howyoutube/pic2.png'>
+		</div>
+	</div>
+	<!-- 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			자막이 정상적으로 화면에 표시되기 시작했다면 이제 본격적으로 이해하기 힘든 영문을 친숙한 한글로 바꿔줄 차례입니다.<br><br>
+			톱니바퀴 모양을 눌러 설정을 엽니다.<br><br>
+			거기에 보면 "자막"이라는 항목이 보여야 정상입니다. 만약에 이게 안보인다구요?<br><br>
+			그렇다면 역시 자막이 영상에 입혀져있는 상태로 올린거라서 이제는 손을 쓸 방도가 없는것입니다. 해당 언어를 배우시던지 아니면 다른 영상을 참고하도록 합시다.<br><br>
+			<img class='img-fluid' src='./howyoutube/pic3.png'>
+		</div>
+	</div>
+	<!-- 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			이렇게 설정 -> 자막 항목을 들어가보면 맨 하단에 "자동번역"이라는 글자가 보입니다.<br><br>
+			이것이 바로 우리가 써볼려는 기능입니다.<br><br>
+			물론 경우에 따라 우리나라에 굉장히 우호적인 채널관리자는 한글자막도 같이 올려두었을 것입니다.<br><br>
+			하지만 본 영상에서는 그렇지 않음으로 자동번역 기능에 한번 기대어 봅시다.<br><br>
+			<img class='img-fluid' src='./howyoutube/pic4.png'>
+		</div>
+	</div>
+	<!-- 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			자동번역 항목에 들어가보면 무수히 많은 언어의 번역을 제공하고 있습니다.<br><br>
+			그중 당연히 한국어도 존재합니다. 친절하게도 가나다 순으로 정렬되어 있기때문에 스크롤을 맨끝으로 내리면 어렵지 않게 "한국어"항목을 찾을수 있을겁니다.<br><br>
+			"한국어"항목을 힘차게 클릭해줍니다.<br><br>
+			<img class='img-fluid' src='./howyoutube/pic5.png'>
+		</div>
+	</div>
+	<!-- 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+	<!-- 단락 시작 -->
+	<div class='card divCardCustomStyle'>
+		<div class='card-body'>
+			그렇게 하고나면 짠!<br><br>
+			위에 자막이 한줄 출력되면서 하단에 자막들이 우리말로 번역되어 나오는것을 확인할수 있습니다.<br><br>
+			이 번역도 인공지능의 힘으로 가능해진거 아닐까 싶은데 이런 편리한 도구의 도움을 받으면서 우리가 그 도구를 만드는 과정에 있다니 참으로 감격스러운 순간이 아닐수 없죠.<br><br>
+			이제 해당 영상을 한국어로 마음껏 즐길 일만 남았습니다.<br><br>
+			한가지 단점을 언급하자면 영상을 매번 볼때마다 이 귀찮은 작업을 해줘야 한다는게 치명적인 단점입니다.<br><br>
+			하지만 별수 없죠 영어공부나 해당 다른 나라 언어를 배우는거보다는 클릭 몇번으로 간단하게 할수있으니 조금 귀찮더라도 우리는 이 기능에 좀 더 기대어 보도록 합시다.<br><br>
+			<img class='img-fluid' src='./howyoutube/pic6.png'>
+		</div>
+	</div>
+	<!-- 단락 끝 -->
+	<div class='rowpadding'></div> <!-- 여백 div -->
+
+<!-- 푸터 부분 시작 --> <!-- 새로운 문서를 작성할때 이부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->
+
+	<div class='rowpadding'></div> <!-- 여백 div -->
+</div>
+<!-- 백그라운드 영상 끝 -->
+</div><!-- VideoPlayDiv -->
+<!-- 백그라운드 영상 끝 -->
+<script>
+// 카카오링크
+function kakaoLinkSend(){
+	Kakao.Link.sendScrap({
+		requestUrl: 'https://codeforulsan.github.io/aiulsan/'
+	});
+}
+</script>
+</body>
+</html>
+
+<!-- 푸터 부분 끝 --> <!-- 새로운 문서를 작성할때 푸터 부분 시작 부분부터 푸터 부분 끝 부분까지 복사해서 붙여넣어주세요 -->
