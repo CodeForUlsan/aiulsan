@@ -13,4 +13,4 @@
 > 본 저장소의 웹 주소입니다.
 > URL : [https://codeforulsan.github.io/aiulsan/](https://codeforulsan.github.io/aiulsan/)
 
-## 이 웹페이지를 향후 교육 과정을 거쳐 같은 길을 걸어갈 후배분들에게 바칩니다.
+### 이 웹페이지를 향후 교육 과정을 거쳐 같은 길을 걸어갈 후배분들에게 바칩니다.
